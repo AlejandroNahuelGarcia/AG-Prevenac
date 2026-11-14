@@ -36,19 +36,52 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearElement = document.querySelector("#current-year");
   if (yearElement) yearElement.textContent = new Date().getFullYear();
 
-  // El formulario es demostrativo: valida los campos y explica cómo conectarlo.
+  // Envío real de consultas mediante FormSubmit (AJAX).
   const contactForm = document.querySelector("#contact-form");
   const feedback = document.querySelector("#form-feedback");
 
   if (contactForm && feedback) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-
       if (!contactForm.reportValidity()) return;
 
-      feedback.textContent =
-        "¡Gracias! El diseño del formulario está listo. Para recibir consultas hay que conectarlo a un servicio de envío.";
-      contactForm.reset();
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const emailField = contactForm.querySelector('[name="Email"]');
+      const replyToField = contactForm.querySelector('#replyto-field');
+      if (replyToField && emailField) replyToField.value = emailField.value;
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Enviando consulta...";
+      }
+      feedback.className = "form-feedback";
+      feedback.textContent = "Estamos enviando tu consulta...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+        const result = await response.json();
+
+        if (!response.ok || result.success === false) {
+          throw new Error(result.message || "No se pudo enviar el mensaje.");
+        }
+
+        feedback.classList.add("is-success");
+        feedback.textContent = "¡Gracias! Tu consulta fue enviada. AG PREVENAC se pondrá en contacto con vos.";
+        contactForm.reset();
+      } catch (error) {
+        feedback.classList.add("is-error");
+        feedback.textContent = "No pudimos enviar la consulta. Por favor, escribinos a info@agprevenc.com o contactanos por WhatsApp.";
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.innerHTML = 'Enviar consulta <i data-lucide="arrow-right"></i>';
+          if (window.lucide) window.lucide.createIcons();
+        }
+      }
     });
   }
 });
