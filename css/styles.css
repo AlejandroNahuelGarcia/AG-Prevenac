@@ -264,3 +264,21 @@ h1 em, h2 em { color: var(--orange); font-style: normal; }
   .hero-logo-panel span { font-size: 8px; letter-spacing: 1.5px; }
   .brand-logo-footer { width: 145px; height: 82px; }
 }
+
+
+/* Contacto funcional y acceso directo a WhatsApp */
+.contact-detail strong a { color: inherit; text-decoration: none; }
+.contact-detail strong a:hover { color: var(--orange); }
+.form-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
+.contact-form button:disabled { opacity: .7; cursor: wait; }
+.form-feedback.is-success { color: #187044 !important; }
+.form-feedback.is-error { color: #b42318 !important; }
+.whatsapp-float {
+  position: fixed; right: 24px; bottom: 24px; z-index: 1000;
+  display: grid; place-items: center; width: 60px; height: 60px;
+  color: #fff; background: #25d366; border: 3px solid #fff; border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0,0,0,.22); transition: transform .2s, box-shadow .2s;
+}
+.whatsapp-float:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.28); }
+.whatsapp-float svg { width: 32px; height: 32px; fill: currentColor; }
+@media (max-width: 700px) { .whatsapp-float { right: 16px; bottom: 16px; width: 56px; height: 56px; } }
