@@ -150,22 +150,26 @@
           <div class="eyebrow"><span></span> HABLEMOS</div>
           <h2>La seguridad de tu equipo merece <em>atención.</em></h2>
           <p>Contanos qué necesitás y nos pondremos en contacto para conversar sobre cómo podemos ayudarte.</p>
-          <div class="contact-detail"><span><i data-lucide="mail"></i></span><div><small>Correo electrónico</small><strong>Agregar correo de contacto</strong></div></div>
-          <div class="contact-detail"><span><i data-lucide="phone"></i></span><div><small>Teléfono / WhatsApp</small><strong>Agregar teléfono de contacto</strong></div></div>
+          <div class="contact-detail"><span><i data-lucide="mail"></i></span><div><small>Correo electrónico</small><strong><a href="mailto:info@agprevenc.com">info@agprevenc.com</a></strong></div></div>
+          <div class="contact-detail"><span><i data-lucide="phone"></i></span><div><small>Teléfono / WhatsApp</small><strong><a href="tel:+541133264213">011 3326-4213</a></strong></div></div>
         </div>
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/ajax/info@agprevenc.com" method="POST">
+          <input type="hidden" name="_subject" value="Nueva consulta desde la web de AG PREVENAC">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_replyto" id="replyto-field" value="">
+          <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
           <h3>Solicitá asesoramiento</h3>
           <p>Completá tus datos y prepararemos tu consulta.</p>
           <label for="name">Nombre y apellido</label>
-          <input id="name" name="name" type="text" placeholder="Tu nombre" autocomplete="name" required>
+          <input id="name" name="Nombre" type="text" placeholder="Tu nombre" autocomplete="name" required>
           <label for="email">Correo electrónico</label>
-          <input id="email" name="email" type="email" placeholder="nombre@empresa.com" autocomplete="email" required>
+          <input id="email" name="Email" type="email" placeholder="nombre@empresa.com" autocomplete="email" required>
           <label for="company">Empresa (opcional)</label>
-          <input id="company" name="company" type="text" placeholder="Nombre de la empresa" autocomplete="organization">
+          <input id="company" name="Empresa" type="text" placeholder="Nombre de la empresa" autocomplete="organization">
           <label for="message">¿En qué podemos ayudarte?</label>
-          <textarea id="message" name="message" rows="4" placeholder="Contanos brevemente qué servicio necesitás..." required></textarea>
-          <button class="button button-navy" type="submit">Preparar consulta <i data-lucide="arrow-right"></i></button>
-          <small class="form-disclaimer">Este formulario es una maqueta visual. Todavía no envía mensajes.</small>
+          <textarea id="message" name="Consulta" rows="4" placeholder="Contanos brevemente qué servicio necesitás..." required></textarea>
+          <button class="button button-navy" type="submit">Enviar consulta <i data-lucide="arrow-right"></i></button>
+          <small class="form-disclaimer">Tus datos se utilizarán únicamente para responder esta consulta.</small>
           <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -185,5 +189,8 @@
       <span>Seguridad e higiene laboral</span>
     </div>
   </footer>
+  <a class="whatsapp-float" href="https://wa.me/5491133264213" target="_blank" rel="noopener noreferrer" aria-label="Contactar a AG PREVENAC por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.9 3 3.1 8.78 3.1 15.9c0 2.27.6 4.49 1.75 6.44L3 29l6.84-1.79a12.95 12.95 0 0 0 6.2 1.58h.01c7.13 0 12.93-5.79 12.94-12.91A12.82 12.82 0 0 0 25.2 6.7 12.85 12.85 0 0 0 16.04 3Zm0 23.6h-.01a10.7 10.7 0 0 1-5.45-1.49l-.39-.23-4.06 1.06 1.08-3.95-.25-.4a10.65 10.65 0 0 1-1.64-5.69c0-5.92 4.82-10.73 10.74-10.73 2.87 0 5.56 1.12 7.59 3.15a10.66 10.66 0 0 1 3.14 7.6c0 5.92-4.82 10.73-10.75 10.73Zm5.9-8.04c-.32-.16-1.9-.94-2.2-1.05-.3-.1-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.68s1.16 3.11 1.32 3.32c.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.3-.21-.62-.37Z"/></svg>
+  </a>
 </body>
 </html>
