@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.reset();
       } catch (error) {
         feedback.classList.add("is-error");
-        feedback.textContent = "No pudimos enviar la consulta. Por favor, escribinos a info@agprevenc.com o contactanos por WhatsApp.";
+        feedback.textContent = "No pudimos enviar la consulta. Por favor, escribinos a info@agprevenac.com o contactanos por WhatsApp.";
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
